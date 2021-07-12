@@ -38,8 +38,8 @@ DB_BACKUP_PATH='~/backups'
 
 # Filename setup
 FILE_NAME=${DATABASE_NAME} 	## (optional)	We can change this to some other name
-FILE_NAME_PREFIX=''			## (optional)	Place prefix in the file 
-FILE_NAME_SUFIX='' 			## (optional)	Place sufix in the file
+FILE_NAME_PREFIX=''		## (optional)	Place prefix in the file 
+FILE_NAME_SUFIX='' 		## (optional)	Place sufix in the file
 
 BACKUP_RETAIN_DAYS=7   ## Number of days to keep local backup copy
 
@@ -60,9 +60,9 @@ fi
 
 # Let's create a new file name
 BACKUP_FILE=${FILE_NAME_PREFIX}${FILE_NAME}${FILE_NAME_SUFIX}-${TODAY}.sql.gz	## Filename
-BACKUP_FILE=`echo "${BACKUP_FILE}"|sed 's/ /-/g'`								## Replace spaces
-BACKUP_FILE_PATH=${DB_BACKUP_PATH}/${TODAY}										## File path
-FULL_BACKUP_FILE_PATH=${BACKUP_FILE_PATH}/${BACKUP_FILE}						## Full file location
+BACKUP_FILE=`echo "${BACKUP_FILE}"|sed 's/ /-/g'`				## Replace spaces
+BACKUP_FILE_PATH=${DB_BACKUP_PATH}/${TODAY}					## File path
+FULL_BACKUP_FILE_PATH=${BACKUP_FILE_PATH}/${BACKUP_FILE}			## Full file location
 
 #### Create MySQL dump and save to gZIP ####
 if [ ! -z ${DATABASE_NAME} ]; then
